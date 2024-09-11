@@ -41,10 +41,10 @@ nav {
 	grid-template-areas:
 		"greeting"
 		"desc"
-		"funfact"
+		"currentProject"
 		"links";
 	justify-items: start;
-  grid-template-columns: auto 1fr;
+	grid-template-columns: auto 1fr;
 }
 
 main {
@@ -177,8 +177,8 @@ svg {
 	transform: translateY(-5px);
 }
 
-.descButton:hover{
-  background-color: var(--accent-shadow);
+.descButton:hover {
+	background-color: var(--accent-shadow);
 }
 
 .descAvatar {
@@ -201,7 +201,7 @@ svg {
 	line-height: 2vh;
 	display: grid;
 	gap: 1rem;
-  justify-items: center;
+	justify-items: center;
 }
 
 .descContent p {
@@ -228,12 +228,18 @@ svg {
 	transition: 250ms;
 }
 
-.funFact {
-	grid-area: funfact;
-  grid-column: 2;
-  grid-row: 1;
+/* ASIDE Current project */
 
-  max-width: 35vw;
+.currentProject {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	grid-area: currentProject;
+	grid-column: 2;
+	grid-row: 1;
+
+	max-width: 35vw;
 	line-height: 2vh;
 	font-size: 2vh;
 
@@ -247,18 +253,63 @@ svg {
 	transition: 250ms;
 }
 
-.funFact:hover {
+.currentProject:hover {
 	transform: translateY(-5px);
+}
+
+.currentProjectHeader {
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	color: var(--main-text-color);
+	font-family: var(--main-font-family);
+	text-decoration: underline;
+	text-decoration-color: var(--accent-color);
+	text-underline-offset: 0.5rem;
+	text-decoration-thickness: 3px;
+	text-decoration-style: solid;
+}
+
+.currentProjectWindow {
+	display: flex;
+    flex-direction: column;
+	align-items: center;
+    margin-top: 15px;
+	gap: 0.25rem;
+
+	border: 1px solid var(--background-color-shadow);
+}
+
+.currentProjectName{
+	font-size: 1.5rem;
+	color: var(--main-text-color);
+	font: bold;
+	text-align: center;
+}
+
+.currentProjectDesc{
+	font-size: 1rem;
+	color: var(--main-text-color);
+	font: bold;
+	word-break: normal;
+	text-align: center;
+}
+
+.currentProjectWindowTemplateImg {
+	position: absolute;
+	
+	filter: blur(2px) brightness(0) saturate(100%) invert(87%) sepia(0%) saturate(17%) hue-rotate(223deg) brightness(89%) contrast(83%);
+	z-index: -1;
 }
 
 /* "Responsive stuff" */
 
 @media screen and (max-width: 1100px) {
-	.funFact {
-    grid-area: funfact;
-    grid-column-start: 1;
-    grid-row: auto;
-  }
+	.currentProject {
+		grid-area: currentProject;
+		grid-column-start: 1;
+		grid-row: auto;
+	}
 }
 
 @media screen and (max-width: 800px) {
@@ -281,38 +332,36 @@ svg {
 		border: 4px solid var(--accent-color);
 	}
 
-  .descContent > a {
-    font-size: 1vh;
-  }
+	.descContent > a {
+		font-size: 1vh;
+	}
 
-  .descContent {
-    font-size: 1vh;
-    line-height: 1.1;
-  }
+	.descContent {
+		font-size: 1vh;
+		line-height: 1.1;
+	}
 
-  .descAvatarImg{
-    width: 100px;
-    height: 100px;
-  }
+	.descAvatarImg {
+		width: 100px;
+		height: 100px;
+	}
 
-  .desc{
-    margin: 0;
-  }
-  
-  svg {
-    width: 20px;
-    height: 20px;
-  }
+	.desc {
+		margin: 0;
+	}
 
+	svg {
+		width: 20px;
+		height: 20px;
+	}
 }
-
 
 @media screen and (max-width: 600px) {
 	.navbarTitle {
 		font-size: 2rem;
 	}
 
-  .greetingDiv h1 {
+	.greetingDiv h1 {
 		font-size: 0.5rem;
 	}
 
@@ -330,6 +379,4 @@ svg {
 		border-radius: 30%;
 		border: 4px solid var(--accent-color);
 	}
-
 }
-
