@@ -43,7 +43,6 @@ nav {
 		"desc"
 		"currentProject"
 		"links";
-	justify-items: start;
 	grid-template-columns: auto 1fr;
 }
 
@@ -235,11 +234,12 @@ svg {
 	flex-direction: column;
 	align-items: center;
 
+	max-width: 600px;
+
 	grid-area: currentProject;
 	grid-column: 2;
 	grid-row: 1;
 
-	max-width: 35vw;
 	line-height: 2vh;
 	font-size: 2vh;
 
@@ -268,6 +268,7 @@ svg {
 	text-underline-offset: 0.5rem;
 	text-decoration-thickness: 3px;
 	text-decoration-style: solid;
+	line-height: 1.2;
 }
 
 .currentProjectWindow {
@@ -276,30 +277,36 @@ svg {
 	align-items: center;
     margin-top: 15px;
 	gap: 0.25rem;
+	
 
 	border: 1px solid var(--background-color-shadow);
 }
 
 .currentProjectName{
 	font-size: 1.5rem;
-	color: var(--main-text-color);
-	font: bold;
+	font-weight: bold;
 	text-align: center;
 }
 
 .currentProjectDesc{
 	font-size: 1rem;
 	color: var(--main-text-color);
-	font: bold;
+	font-weight: bold;
 	word-break: normal;
 	text-align: center;
 }
 
 .currentProjectWindowTemplateImg {
 	position: absolute;
+	margin-top: 30px;
 	
-	filter: blur(2px) brightness(0) saturate(100%) invert(87%) sepia(0%) saturate(17%) hue-rotate(223deg) brightness(89%) contrast(83%);
+	filter: blur(2px) brightness(0) saturate(100%) invert(50%) sepia(3%) saturate(98%) hue-rotate(314deg) brightness(90%) contrast(98%);
 	z-index: -1;
+}
+
+.currentProjectButton{
+	color: red;
+	text-decoration: none;
 }
 
 /* "Responsive stuff" */
@@ -314,11 +321,11 @@ svg {
 
 @media screen and (max-width: 800px) {
 	.greetingDiv h1 {
-		font-size: 0.8rem;
+		font-size: 1.2rem;
 	}
 
 	.greetingDiv p {
-		font-size: 0.8rem;
+		font-size: 1.2rem;
 		font-weight: bold;
 		line-height: 1.1;
 	}
@@ -354,22 +361,31 @@ svg {
 		width: 20px;
 		height: 20px;
 	}
+
+	.currentProject {
+		grid-area: currentProject;
+		grid-column: 1;
+		grid-row: 3;
+	}
+	
 }
 
 @media screen and (max-width: 600px) {
-	.navbarTitle {
-		font-size: 2rem;
-	}
 
 	.greetingDiv h1 {
-		font-size: 0.5rem;
+		font-size: 0.6rem;
 	}
 
 	.greetingDiv p {
-		font-size: 0.5rem;
+		font-size: 0.6rem;
 		font-weight: bold;
 		line-height: 1.1;
 	}
+
+	.navbarTitle{
+		font-size: 2.2rem;
+	}
+
 
 	.greetingEmoji {
 		font-size: 1rem;
