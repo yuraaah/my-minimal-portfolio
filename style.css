@@ -1,13 +1,21 @@
 :root {
 	--accent-color: rgb(255, 215, 0);
-	--accent-shadow: rgba(255, 217, 0, 0.4);
+	--accent-shadow: rgba(255, 215, 0, 0.4);
 	--main-text-color: rgb(200, 200, 200);
 	--main-text-color-shadow: rgba(200, 200, 200, 0.5);
-	--secondary-text-color: rgb(101, 30, 245);
+	--secondary-text-color: rgb(100, 30, 245);
 	--main-font-family: sans-serif;
-	--background-color: rgb(30, 30, 30);
+	--background-color: rgb(40, 40, 40);
 	--background-color-shadow: rgba(22, 22, 22, 0.5);
 }
+
+.oswald-mainfont {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 
 * {
 	box-sizing: border-box;
